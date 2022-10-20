@@ -1,0 +1,163 @@
+/*VARIABLES*/
+:root{
+    --font: 'Lato', sans-serif;
+    --buttonsColor: #9999ff;
+    --font: 'Questrial', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--font);
+}
+
+/*GLOBALS*/
+.btn{
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.logo{
+    width: 200px;
+}
+
+.center{
+    text-align: center;
+}
+
+/*TABS*/
+.tabs{
+    overflow: hidden;
+    border: 1px solid black;
+    width: 90%;
+    height: 90%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tabs-controls{
+    display: flex;
+}
+
+.btn-ctrl{
+    padding: 8px 16px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.tabs .tabs-controls button.active{
+    background-color: var(--buttonsColor);
+}
+
+.tabs .tabs-container{
+    display: flex;
+    flex-wrap: nowrap;
+    transform: translatex(0);
+    transition: all 0.3s;
+}
+
+.tabs .tabs-container .tab{
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.tabs .tabs-container .tab .tab-content{
+    width: 95%;
+    height: 100%;
+    margin: 20px auto;
+}
+
+/*TABS CONTENT*/
+.customs-container{
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.btn-arrows{
+    background-color: var(--buttonsColor);
+    padding: 10px 30px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.icon-up{
+    transform: rotate(-90deg);
+}
+
+.icon-down{
+    transform: rotate(90deg);
+}
+
+.icon-incl-up{
+    transform: rotate(-45deg);
+}
+
+.icon-incl-down{
+    transform: rotate(45deg);
+}
+
+.input-field{
+    width: 100px;
+}
+
+.btn-fix{
+    background-color: var(--buttonsColor);
+    font-size: 1.1rem;
+    padding: 20px 30px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+/*PERSONAL SETTINGS*/
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+/*POP UP*/
+.popup{
+    margin: 50px auto;
+    width: 500px;  
+    max-width: 80%;
+    border: 1px solid black;
+    transform: scale(0);
+    transition: all 0.5s ease-in-out 0s;
+}
+
+.popup.active{
+    transform: scale(1);
+    transition: all 0.5s ease-in-out 0.125s;
+}
+
+.popup-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--buttonsColor);
+    border: 1px solid black;
+    padding: 0px 15px;
+}
+
+.popup-header .close-btn{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.popup .popup-body{
+    padding: 20px;
+    width: 100%;
+    border: 1px solid black;
+    text-align: center;
+}
