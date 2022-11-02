@@ -105,7 +105,11 @@ body{
 }
 
 .input-field{
+    display: inline-block;
     width: 100px;
+    height: 20px;
+    text-align: center;
+    border: 1px solid black;
 }
 
 .btn-fix{
