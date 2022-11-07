@@ -28,8 +28,13 @@ body{
     text-align: center;
 }
 
+p{
+    font-size: 1.1rem;
+}
+
 /*TABS*/
 .tabs{
+    background-color: white;
     overflow: hidden;
     width: 90%;
     height: 90%;
@@ -43,7 +48,8 @@ body{
     display: flex;
 }
 
-.btn-ctrl{
+.btn-ctrl,
+.btn-help{
     padding: 8px 16px;
     font-size: 1rem;
     letter-spacing: 1px;
@@ -82,7 +88,9 @@ body{
 
 .btn-arrows{
     background-color: var(--buttonsColor);
-    padding: 10px 30px;
+    width: 90px;
+    height: 55px;
+    padding: 5px 22px;
     border-radius: 10px;
     margin-bottom: 10px;
     margin-left: 20px;
@@ -90,24 +98,28 @@ body{
 
 .icon-up{
     transform: rotate(-90deg);
+    max-width: 40px;
 }
 
 .icon-down{
     transform: rotate(90deg);
+    max-width: 40px;
 }
 
 .icon-incl-up{
     transform: rotate(-45deg);
+    max-width: 40px;
 }
 
 .icon-incl-down{
     transform: rotate(45deg);
+    max-width: 40px;
 }
 
 .input-field{
     display: inline-block;
     width: 100px;
-    height: 20px;
+    height: 22px;
     text-align: center;
     border: 1px solid black;
 }
@@ -115,20 +127,23 @@ body{
 .btn-fix{
     background-color: var(--buttonsColor);
     font-size: 1.1rem;
-    padding: 20px 30px;
+    width: 140px;
+    padding: 20px 0px;
     border-radius: 10px;
     margin-right: 10px;
     color: black;
 }
-/*PERSONAL SETTINGS*/
 
+/*PERSONAL SETTINGS*/
 .form-group{
     margin-bottom: 20px;
 }
 
 /*POP UP*/
 .popup{
-    margin: 50px auto;
+    position: fixed;
+    top: 80px;
+    left: 100px;
     width: 500px;  
     max-width: 80%;
     border: 1px solid black;
@@ -139,6 +154,7 @@ body{
 .popup.active{
     transform: scale(1);
     transition: all 0.5s ease-in-out 0.125s;
+    z-index: 100;
 }
 
 .popup-header{
@@ -150,7 +166,7 @@ body{
     padding: 0px 15px;
 }
 
-.popup-header .close-btn{
+.popup-header .btn-close{
     cursor: pointer;
     border: none;
     outline: none;
@@ -161,8 +177,19 @@ body{
 }
 
 .popup .popup-body{
+    background-color: white;
     padding: 20px;
     width: 100%;
     border: 1px solid black;
     text-align: center;
+}
+
+/*REMINDER*/
+.reminder-btns{
+    margin-bottom: 20px;
+}
+
+.btn-go,
+.btn-no{
+    padding: 10px;
 }

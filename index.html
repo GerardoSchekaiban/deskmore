@@ -16,7 +16,7 @@
         <div class="tabs-controls">
             <button class="btn btn-ctrl active">Table Settings</button>
             <button class="btn btn-ctrl">Personal Settings</button>
-            <button class="btn btn-ctrl" data-popup-target ="#popup">Help</button>
+            <button class="btn btn-help">Help</button>
         </div>
         <div class="tabs-container">
             <div class="tab">
@@ -27,11 +27,11 @@
                             <p>Set the desire height of the table via the buttons</p>
                         </div>
                         <div class="arrow-buttons">
-                            <button class="btn btn-arrows"><img class="icon-up" src="icon.png" alt="arrow-up"></button>
-                            <button class="btn btn-arrows"><img class="icon-down" src="icon.png" alt="arrow-down"></button>
+                            <button class="btn btn-arrows plus-height"><img class="icon-up" src="icon.png" alt="arrow-up"></button>
+                            <button class="btn btn-arrows minus-height"><img class="icon-down" src="icon.png" alt="arrow-down"></button>
                             <form action="">
                                 <label for="">Current height of table in cm</label>
-                                <div class="input-field">15</div>
+                                <div class="input-field num-height">0</div>
                             </form>
                         </div>
                     </div>
@@ -40,21 +40,21 @@
                             <p>Set the desire inclination of the table via the buttons</p>
                         </div>
                         <div class="arrow-buttons">
-                            <button class="btn btn-arrows"><img class="icon-incl-up" src="icon.png" alt="arrow-up"></button>
-                            <button class="btn btn-arrows"><img class="icon-incl-down" src="icon.png" alt="arrow-down"></button>
+                            <button class="btn btn-arrows plus-incl"><img class="icon-incl-up" src="icon.png" alt="arrow-up"></button>
+                            <button class="btn btn-arrows minus-incl"><img class="icon-incl-down" src="icon.png" alt="arrow-down"></button>
                             <form action="">
                                 <label for="">Current inclination in deg</label>
-                                <div class="input-field">15</div>
+                                <div class="input-field num-incl">0</div>
                             </form>
                         </div>
                     </div>
                     <div class="fixed-positions">
                         <p>Specified positions</p>
                         <div class="fixed-buttons">
-                            <button class="btn btn-fix">Sitzen</button>
-                            <button class="btn btn-fix">Stehen</button>
-                            <button class="btn btn-fix">Neigung 1</button>
-                            <button class="btn btn-fix">Neigung 2</button>                            
+                            <button class="btn btn-fix">Sit</button>
+                            <button class="btn btn-fix">Stand</button>
+                            <button class="btn btn-fix">Inclination 1</button>
+                            <button class="btn btn-fix">Inclination 2</button>                            
                         </div>
                     </div>
                 </div>
@@ -63,59 +63,78 @@
                 <div class="tab-content">
                     <img class="logo" src="logo.png" alt="logo-deskmore">
                     <h1>Personal Settings</h1>
-                    <div class="customs-container">
-                        <form action="">
+                    <div>
                             <div class="form-group">
                                 <label for="">Table height sitting</label>
-                                <input class="" type="text">
+                                <input id="inpSit" type="number">
                                 <label for="">cm</label>
                             </div>
                             <div class="form-group">
                                 <label for="">Table height standing</label>
-                                <input class="" type="text">
+                                <input id="inpStand" type="number">
                                 <label for="">cm</label>
                             </div>
                             <div class="form-group">
                                 <label for="">Inclination 1</label>
-                                <input class="" type="text">
+                                <input id="inpInclOne" type="number">
                                 <label for="">Grad</label>
                             </div>
                             <div class="form-group">
                                 <label for="">Inclination 2</label>
-                                <input class="" type="text">
+                                <input id="inpInclTwo" type="number">
                                 <label for="">Grad</label>
                             </div>
                             <div class="form-group">
                                 <label for="">Automatic reminder after</label>
-                                <input class="" type="text">
+                                <input id="inpRem" type="number">
                                 <label for="">h</label>
                             </div>
-                        
-                        </form>
+                            <button type="submit" id="inpSave">Save</button>
                     </div>
                 </div>
             </div>
-            <div class="tab help">
-                <div class="popup" id="popup">
-                    <div class="popup-header">
-                        <h1>Hilfe</h1>
-                        <button data-close-button class="close-btn">&times;</button>
-                    </div>
-                    <div class="popup-body">
-                        <p>Über die „Tischeinstellungen“ können Sie den Tisch auf Ihre gewünschte Höhe und Neigung einstellen.
-                            Unter den Buttons wird Ihnen die aktuelle Höhe und Neigung angezeigt. Die „festgelegten Positionen“ lassen sich die über die „Persönlichen Einstellungen“ anpassen.
-                            Zudem lässt sich auch das Zeitintervall für die automatische Erinnerung dort festlegen.
-                        </p>
-                        <img class="logo center" src="logo.png" alt="logo-deskmore">
-                    </div>  
-                </div>
+            <div class="tab help"></div>
+        </div>
+        <div class="popup help">
+            <div class="popup-header">
+                <h1>Hilfe</h1>
+                <button class="btn-close">&times;</button>
             </div>
+            <div class="popup-body">
+                <p>Über die „Tischeinstellungen“ können Sie den Tisch auf Ihre gewünschte Höhe und Neigung einstellen.
+                    Unter den Buttons wird Ihnen die aktuelle Höhe und Neigung angezeigt. Die „festgelegten Positionen“ lassen sich die über die „Persönlichen Einstellungen“ anpassen.
+                    Zudem lässt sich auch das Zeitintervall für die automatische Erinnerung dort festlegen.
+                </p>
+                <img class="logo center" src="logo.png" alt="logo-deskmore">
+            </div>  
+        </div>
+
+        <div class="popup reminder">
+            <div class="popup-header">
+                <h1>Reminder</h1>
+                <button class="btn-close">&times;</button>
+            </div>
+            <div class="popup-body">
+                <h2>Time to work standing!</h2>
+                <p>You worked 30 min sitten</p>
+                <div class="reminder-btns">
+                    <button class="btn btn-fix btn-go">Let's go!</button>
+                    <button class="btn btn-fix btn-no">No, thanks!</button>
+                </div>
+                
+                <img class="logo center" src="logo.png" alt="logo-deskmore">
+            </div>  
         </div>
     </div>
+
+
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="app.js"></script>
+    <script src="counters.js"></script>
+    <script src="data.js"></script>
+
 
 </body>
 </html>

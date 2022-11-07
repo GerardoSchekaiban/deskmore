@@ -1,5 +1,5 @@
 //Tag navigation
-document.querySelectorAll('.tabs-controls button') 
+document.querySelectorAll('.tabs-controls .btn-ctrl') 
 .forEach(button => {
     button.addEventListener('click',() => {
 
@@ -20,21 +20,17 @@ document.querySelectorAll('.tabs-controls button')
 })
 
 //pop up
-const openPopUpButtons = document.querySelectorAll('[data-popup-target]');
-const closePopUpButtons = document.querySelectorAll('[data-close-button]');
+const openPopUpButton = document.querySelector('.btn-help');
+const closePopUpButton = document.querySelector('.btn-close');
 
-openPopUpButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const popUp = document.querySelector(button.dataset.popupTarget);
-        openModal(popUp);
-    })
+openPopUpButton.addEventListener('click', () => {
+    const popUp = document.querySelector('.popup.help');
+    openModal(popUp);
 })
 
-closePopUpButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const popUp = button.closest('.popup');
-        closeModal(popUp);
-    })
+closePopUpButton.addEventListener('click', () => {
+    const popUp = document.querySelector('.popup.help');
+    closeModal(popUp);
 })
 
 function openModal(popUp){
