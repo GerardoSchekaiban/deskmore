@@ -32,9 +32,6 @@ p{
     font-size: 1.1rem;
 }
 
-h1{
-    color: white;
-}
 
 /*TABS*/
 .tabs{
@@ -143,6 +140,23 @@ h1{
 /*PERSONAL SETTINGS*/
 .form-group{
     margin-bottom: 20px;
+}
+
+.set-field{
+    width: 70px;
+}
+
+.settings-container{
+    display: flex;
+}
+
+.settings-measures{
+    margin-bottom: 350px;
+}
+.measures{
+    width: 400px;
+    margin-left: 10px;
+    margin-top: 50px;
 }
 
 /*POP UP*/
